@@ -1,0 +1,1 @@
+﻿ALTER SEQUENCE seq_lams_rentincrement RESTART WITH 1;

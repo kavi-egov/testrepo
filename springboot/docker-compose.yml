@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+
+    springimg:
+        image: springimg
+        ports:
+            - 8090:9090
+        environment:
+            spring.datasource.url: jdbc:postgresql://localhost:5432/lams
+            spring.datasource.username: postgres
+            spring.datasource.password: postgres
