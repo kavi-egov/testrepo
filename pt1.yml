@@ -90,7 +90,7 @@ serviceMaps:
        - jsonPath: $.properties.*.propertyDetail.auditDetails.lastModifiedTime
          type: LONG
          
-       - jsonPath: $.properties[?(@.propertyDetail.id=={id})].id
+       - jsonPath: $.properties.*.id
          
        - jsonPath: $.properties.*.propertyDetail.taxCalculations
          type: JSON
