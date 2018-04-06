@@ -6,57 +6,6 @@ serviceMaps:
    description: create property tax in egpt_property
    fromTopic: property-create-validated
    queryMaps: 
-    - query: INSERT INTO egpt_property (id,tenantId, upicNumber, oldUpicNumber, vltUpicNumber,creationReason, assessmentDate,occupancyDate, gisRefNo,isAuthorised, isUnderWorkflow, channel, createdBy,lastModifiedBy, createdTime,lastModifiedTime,sequenceNo,demands,oldestUpicNumber)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
-      basePath: $.properties.*
-      jsonMaps:
-       
-       - jsonPath: $.properties.*.id
-         
-       - jsonPath: $.properties.*.tenantId
-         
-       - jsonPath: $.properties.*.upicNumber
-         
-       - jsonPath: $.properties.*.oldUpicNumber
-         
-       - jsonPath: $.properties.*.vltUpicNumber
-
-       - jsonPath: $.properties.*.creationReason
-         
-       - jsonPath: $.properties.*.assessmentDate
-         type: DATE
-         dbType: DATE
-       
-       - jsonPath: $.properties.*.occupancyDate
-         type: DATE
-         dbType: DATE
-
-       - jsonPath: $.properties.*.gisRefNo
-         
-       - jsonPath: $.properties.*.isAuthorised
-         type: BOOLEAN
-         
-       - jsonPath: $.properties.*.isUnderWorkflow
-         type: BOOLEAN
-         
-       - jsonPath: $.properties.*.channel
-         
-       - jsonPath: $.properties.*.auditDetails.createdBy
-
-       - jsonPath: $.properties.*.auditDetails.lastModifiedBy
-         
-       - jsonPath: $.properties.*.auditDetails.createdTime
-         type: LONG
-
-       - jsonPath: $.properties.*.auditDetails.lastModifiedTime
-         type: LONG 
-         
-       - jsonPath: $.properties.*.sequenceNo
-         type: INT
-       
-       - jsonPath: $.properties.*.demandsJsonObject
-
-       - jsonPath: $.properties.*.oldestUpicNumber
-
     - query: INSERT INTO egpt_propertydetails (id, source, regdDocNo, regdDocDate,reason, status, isVerified,verificationDate, isExempted, exemptionReason, propertyType, category, usage,department, apartment, siteLength, siteBreadth, sitalArea,totalBuiltupArea, undividedShare, noOfFloors, isSuperStructure, landOwner, floorType,woodType, roofType, wallType, stateId, applicationNo, createdBy, lastModifiedBy,createdTime, lastModifiedTime, property, taxCalculations,factors,assessmentDates,builderDetails,bpaNo,bpaDate,subUsage)VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);
       basePath: $.properties.*.propertyDetail
       jsonMaps:
